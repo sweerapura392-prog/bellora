@@ -11,29 +11,35 @@
         :root {
             --primary-rose: #E86380; /* Vibrant Rose - Main Accent */
             --secondary-mint: #9FE2BF; /* Vibrant Mint Green - Secondary Accent */
-            --light-petal: #FDE4C9;  /* Soft Peach/Cream - Lightest Accent */
-            --dark-text: #3C4048;    /* Professional Charcoal/Slate - Main Text Contrast */
+            --light-petal: #FDE4C9; /* Soft Peach/Cream - Lightest Accent */
+            --dark-text: #3C4048; /* Professional Charcoal/Slate - Main Text Contrast */
             
             /* Multi-color Vibrant Gradient for Full Background */
             --bg-gradient: linear-gradient(135deg, #FDE4C9 0%, #E0BBE4 35%, #9FE2BF 70%, #90D3FF 100%);
             
             /* Light colors for hover background */
-            --hover-whatsapp: #f0fff0; 
-            --hover-facebook: #eaf4ff; 
-            --hover-video: #fefcf6;    
+            --hover-whatsapp: #f0fff0;
+            --hover-facebook: #eaf4ff;
+            /* New hover color for TikTok (light magenta) */
+            --hover-tiktok: #fff0f5; 
+            
+            /* TikTok-like colors for the icon */
+            --tiktok-magenta: #FE2C55;
+            --tiktok-cyan: #25F4EE;
+            --tiktok-dark: #010101;
         }
-        
+
         .full-view {
             min-height: 100vh;
             background: var(--bg-gradient);
             transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-            padding: 1rem;
+            padding: 1rem; /* Base padding for mobile viewport */
         }
 
         .elegant-text {
             font-family: 'Georgia', 'Times New Roman', serif;
             letter-spacing: 0.1em;
-            text-shadow: 1px 1px 2px rgba(60, 64, 72, 0.1); 
+            text-shadow: 1px 1px 2px rgba(60, 64, 72, 0.1);
             color: var(--dark-text);
         }
         
@@ -47,7 +53,7 @@
             animation: slow-pulse 2.5s infinite ease-in-out;
         }
 
-        /* --- New Ripple Wave Effect --- */
+        /* --- Ripple Wave Effect --- */
         @keyframes ripple-wave-animation {
             0% {
                 transform: translate(-50%, -50%) scale(0.1);
@@ -68,19 +74,21 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.5); /* Semi-transparent white for a water effect */
             /* Increased duration to 1200ms (1.2 seconds) for a smoother, slower wave */
-            animation: ripple-wave-animation 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
-            z-index: 5; 
+            animation: ripple-wave-animation 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            z-index: 5;
         }
         /* --------------------------- */
         
         /* Button Style */
         .social-link-btn {
+            position: relative; /* Important for ripple to appear correctly */
+            overflow: hidden; /* Clips the ripple effect */
             background-color: white;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
             color: var(--dark-text);
             border: 2px solid var(--secondary-mint); /* Base border color uses secondary vibrant color */
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         }
 
         /* General hover interaction */
@@ -92,21 +100,22 @@
         /* Specific Hover Styles */
         .whatsapp-link:hover {
             background-color: var(--hover-whatsapp) !important;
-            border-color: #25D366 !important; 
+            border-color: #25D366 !important;
             color: #25D366 !important;
         }
         .facebook-link:hover {
             background-color: var(--hover-facebook) !important;
-            border-color: #1877F2 !important; 
+            border-color: #1877F2 !important;
             color: #1877F2 !important;
         }
-        .video-link:hover { 
-            background-color: var(--hover-video) !important;
-            border-color: var(--dark-text) !important; 
-            color: var(--dark-text) !important;
+        /* TikTok specific hover */
+        .tiktok-link:hover {
+            background-color: var(--hover-tiktok) !important; 
+            border-color: var(--tiktok-magenta) !important; 
+            color: var(--tiktok-dark) !important;
         }
         .instagram-link:hover {
-            background-color: var(--light-petal) !important; 
+            background-color: var(--light-petal) !important;
             border-color: var(--primary-rose) !important; /* Uses new vibrant rose color */
             color: var(--dark-text) !important;
         }
@@ -137,24 +146,39 @@
         }
 
         .social-icon {
-            fill: currentColor; 
-            width: 1.75rem; 
+            fill: currentColor;
+            width: 1.75rem;
             height: 1.75rem;
             margin-right: 0.75rem;
             transition: all 0.3s ease;
         }
 
-        .whatsapp-icon-energy { 
-            color: #25D366; 
-            filter: drop-shadow(0 2px 4px rgba(37, 211, 102, 0.4)); 
+        .whatsapp-icon-energy {
+            color: #25D366;
+            filter: drop-shadow(0 2px 4px rgba(37, 211, 102, 0.4));
         }
-        .facebook-icon-energy { 
-            color: #1877F2; 
-            filter: drop-shadow(0 2px 4px rgba(24, 119, 242, 0.4)); 
+        .facebook-icon-energy {
+            color: #1877F2;
+            filter: drop-shadow(0 2px 4px rgba(24, 119, 242, 0.4));
         }
         
-        .instagram-icon { color: url(#instagramGradient); } 
+        .instagram-icon { color: url(#instagramGradient); }
 
+        /* TikTok Icon Style */
+        .tiktok-icon {
+            position: relative;
+            fill: var(--tiktok-dark); 
+            /* Apply the two-tone shadow effect */
+            filter: 
+                drop-shadow(3px 0px 0 var(--tiktok-magenta)) 
+                drop-shadow(-3px -3px 0 var(--tiktok-cyan));
+        }
+        
+        .social-link-btn:hover .social-icon {
+            fill: currentColor;
+            filter: none !important;
+        }
+        
         /* SVG definitions for gradient for Instagram */
         #instagramGradient stop:first-child { stop-color: #feda75; }
         #instagramGradient stop:nth-child(2) { stop-color: #fa7e1e; }
@@ -162,9 +186,41 @@
         #instagramGradient stop:nth-child(4) { stop-color: #962fbf; }
         #instagramGradient stop:last-child { stop-color: #4f5bd5; }
 
-        .social-link-btn:hover .social-icon {
-            fill: currentColor;
-            filter: none !important; 
+        
+        /* Video Container Styling (Kept the internal video view for reference) */
+        .video-mock {
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+        .play-triangle {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid #E86380; /* Rose color for play button */
+            margin-left: 3px;
         }
         
     </style>
@@ -202,7 +258,8 @@
 
     <!-- Main Content View -->
     <div id="main-content" class="full-view hidden opacity-0 flex items-center justify-center">
-        <div class="max-w-md w-full p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100 text-center">
+        <!-- Optimized card padding: p-6 (24px) for mobile, md:p-8 (32px) for desktop -->
+        <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100 text-center">
             
             <!-- Logo/Avatar -->
             <div class="mb-8">
@@ -232,12 +289,11 @@
                     Follow us on Facebook
                 </a>
                 
-                <a href="#" class="social-link-btn video-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md" style="border-color: var(--dark-text); color: var(--dark-text);">
-                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: currentColor; width: 1.75rem; height: 1.75rem;">
-                        <!-- TikTok Icon paths (colors handled via CSS variables/fill) -->
-                        <path d="M12.2 4V16.7C12.2 19.19 10.19 21.2 7.7 21.2C5.21 21.2 3.2 19.19 3.2 16.7C3.2 14.21 5.21 12.2 7.7 12.2C7.99 12.2 8.28 12.23 8.55 12.28V7.7H18.2V4.2H12.2Z" fill="var(--tiktok-magenta)" style="opacity: 0.6; transform: translate(0.4px, 0.4px);"/>
-                        <path d="M11.8 4V16.3C11.8 18.79 9.79 20.8 7.3 20.8C4.81 20.8 2.8 18.79 2.8 16.3C2.8 13.81 4.81 11.8 7.3 11.8C7.59 11.8 7.88 11.83 8.15 11.88V7.3H17.8V3.8H11.8Z" fill="var(--tiktok-cyan)" style="opacity: 0.6; transform: translate(-0.4px, -0.4px);"/>
-                        <path d="M12 4V16.5C12 18.99 9.99 21 7.5 21C5.01 21 3 18.99 3 16.5C3 14.01 5.01 12 7.5 12C7.79 12 8.08 12.03 8.35 12.08V7.5H18V4H12Z" fill="var(--tiktok-dark)"/>
+                <!-- Updated: TikTok button text changed to 'Explore us on TikTok' -->
+                <a href="https://www.tiktok.com/@bellora_gifts_florals" target="_blank" class="social-link-btn tiktok-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md" style="border-color: var(--tiktok-dark); color: var(--tiktok-dark);">
+                    <!-- TikTok Icon SVG -->
+                    <svg class="social-icon tiktok-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.333 0C10.01 0 1.833 3.333 1.833 12.333V24h5.5V13.784c0-2.842 2.155-3.333 4.167-3.333c1.833 0 3.167 1.333 3.167 3.333V24h5.5V12.333C21.167 3.333 12.99 0 10.667 0h1.666z"/>
                     </svg>
                     Explore us on TikTok
                 </a>
@@ -245,16 +301,20 @@
                 <a href="https://www.instagram.com/bellora_gifts_and_florals?igsh=NDdyMmIzd3o2Yjhw&utm_source=qr" target="_blank" class="social-link-btn instagram-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md mt-6" style="border-color: var(--primary-rose); color: var(--dark-text);">
                     <svg class="social-icon instagram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#instagramGradient)"/>
-                        <path d="M16 3h.01" fill="white"/> 
+                        <path d="M16 3h.01" fill="white"/>
                         <circle cx="12" cy="12" r="4" fill="white"/>
                     </svg> Follow us on Instagram
                 </a>
+
+                <!-- Removed: The text '(or view internal video preview)' has been removed -->
+                <button onclick="window.showView('video-content'); return false;" class="text-sm text-gray-400 hover:text-gray-600 transition duration-200 mt-4 mx-auto block"></button>
             </div>
         </div>
     </div>
 
     <!-- Instagram Content View (Placeholder) -->
     <div id="ig-content" class="full-view hidden opacity-0">
+        <!-- Optimized card padding: p-6 (24px) for mobile, md:p-10 (40px) for desktop -->
         <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
             
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--primary-rose);">
@@ -263,7 +323,7 @@
             </button>
 
             <h1 class="text-3xl font-extrabold elegant-text mb-6" style="color: var(--dark-text);">
-                Our Latest Blooms
+                Our Latest Blooms (Instagram)
             </h1>
             <p class="text-gray-500 mb-6 text-sm">A preview of our featured arrangements and seasonal collections.</p>
             
@@ -284,12 +344,48 @@
         </div>
     </div>
 
+    <!-- Video Content View (Simulated Video Gallery) -->
+    <div id="video-content" class="full-view hidden opacity-0">
+        <!-- Optimized card padding: p-6 (24px) for mobile, md:p-10 (40px) for desktop -->
+        <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
+            
+            <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--dark-text);">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Main Hub
+            </button>
+
+            <h1 class="text-3xl font-extrabold elegant-text mb-6" style="color: var(--dark-text);">
+                Featured Videos
+            </h1>
+            <p class="text-gray-500 mb-6 text-sm">See our arrangements in action, live tours, and gift wrapping tutorials.</p>
+            
+            <div class="space-y-6">
+                <!-- Video Mock 1 -->
+                <div class="aspect-video video-mock">
+                    <div class="play-button" onclick="window.alertMessage('Playing: Wedding Bouquet Showcase', 'info')">
+                        <div class="play-triangle"></div>
+                    </div>
+                    <span class="p-4">Video 1: Wedding Bouquet Showcase</span>
+                </div>
+                
+                <!-- Video Mock 2 -->
+                <div class="aspect-video video-mock">
+                    <div class="play-button" onclick="window.alertMessage('Playing: New Seasonal Arrangement', 'info')">
+                        <div class="play-triangle"></div>
+                    </div>
+                    <span class="p-4">Video 2: New Seasonal Arrangement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript for View Management and Ripple Effect -->
     <script>
         const views = {
             'loader-wrapper': document.getElementById('loader-wrapper'),
             'main-content': document.getElementById('main-content'),
             'ig-content': document.getElementById('ig-content'),
+            'video-content': document.getElementById('video-content'), // Added new view
         };
         
         const alertBox = document.getElementById('alert-message-box');
@@ -328,9 +424,9 @@
             if (targetView && targetView.id !== 'loader-wrapper') {
                 setTimeout(() => {
                     targetView.classList.remove('hidden');
-                    void targetView.offsetWidth; 
+                    void targetView.offsetWidth;
                     targetView.style.opacity = '1';
-                }, 350); 
+                }, 350);
             }
         }
         
@@ -338,9 +434,9 @@
             views['loader-wrapper'].style.opacity = '0';
             setTimeout(() => {
                 views['loader-wrapper'].style.visibility = 'hidden';
-                views['loader-wrapper'].classList.add('hidden'); 
+                views['loader-wrapper'].classList.add('hidden');
                 window.showView('main-content');
-            }, 700); 
+            }, 700);
         }
         
         // --- Ripple Click Handler ---
@@ -351,10 +447,9 @@
             }
 
             // Only show the ripple if the main content or IG content is visible (not the loader)
-            if (views['main-content'].classList.contains('hidden') && views['ig-content'].classList.contains('hidden')) {
+            if (views['main-content'].classList.contains('hidden') && views['ig-content'].classList.contains('hidden') && views['video-content'].classList.contains('hidden')) {
                 return;
             }
-
 
             const ripple = document.createElement('div');
             ripple.classList.add('ripple-effect');
@@ -376,12 +471,12 @@
                 if(ripple.parentNode) {
                     ripple.remove();
                 }
-            }, 1300); 
+            }, 1300);
         }
 
         // --- Initial Flow Trigger ---
         window.addEventListener('DOMContentLoaded', () => {
-            const minLoadTime = 1500; 
+            const minLoadTime = 1500;
             setTimeout(hideLoader, minLoadTime);
             
             // Attach the ripple click listener to the entire document body
