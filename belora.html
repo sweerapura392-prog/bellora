@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bellora Gifts & Florals Profile</title>
     
+    <!-- Dancing Script (Cursive) for the Intro Page Only -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* --- Custom Vibrant Floral Color Scheme Variables --- */
@@ -20,7 +22,6 @@
             /* Light colors for hover background */
             --hover-whatsapp: #f0fff0;
             --hover-facebook: #eaf4ff;
-            /* New hover color for TikTok (light magenta) */
             --hover-tiktok: #fff0f5; 
             
             /* TikTok-like colors for the icon */
@@ -33,14 +34,21 @@
             min-height: 100vh;
             background: var(--bg-gradient);
             transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-            padding: 1rem; /* Base padding for mobile viewport */
+            padding: 1rem; 
         }
 
+        /* Reverted to the original Professional Serif for the whole site */
         .elegant-text {
             font-family: 'Georgia', 'Times New Roman', serif;
             letter-spacing: 0.1em;
             text-shadow: 1px 1px 2px rgba(60, 64, 72, 0.1);
             color: var(--dark-text);
+        }
+
+        /* Specific Cursive Font ONLY for the Intro Page */
+        .intro-cursive {
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 0.05em;
         }
         
         /* Define the slow pulse animation */
@@ -68,36 +76,32 @@
         
         .ripple-effect {
             position: absolute;
-            width: 50px; /* Base size for the starting point */
+            width: 50px; 
             height: 50px;
-            pointer-events: none; /* Allows clicks to pass through */
+            pointer-events: none; 
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white for a water effect */
-            /* Increased duration to 1200ms (1.2 seconds) for a smoother, slower wave */
+            background: rgba(255, 255, 255, 0.5); 
             animation: ripple-wave-animation 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             z-index: 5;
         }
-        /* --------------------------- */
         
         /* Button Style */
         .social-link-btn {
-            position: relative; /* Important for ripple to appear correctly */
-            overflow: hidden; /* Clips the ripple effect */
+            position: relative; 
+            overflow: hidden; 
             background-color: white;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
             color: var(--dark-text);
-            border: 2px solid var(--secondary-mint); /* Base border color uses secondary vibrant color */
+            border: 2px solid var(--secondary-mint); 
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         }
 
-        /* General hover interaction */
         .social-link-btn:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* More prominent shadow on hover */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
             text-shadow: none;
         }
         
-        /* Specific Hover Styles */
         .whatsapp-link:hover {
             background-color: var(--hover-whatsapp) !important;
             border-color: #25D366 !important;
@@ -108,7 +112,6 @@
             border-color: #1877F2 !important;
             color: #1877F2 !important;
         }
-        /* TikTok specific hover */
         .tiktok-link:hover {
             background-color: var(--hover-tiktok) !important; 
             border-color: var(--tiktok-magenta) !important; 
@@ -116,16 +119,14 @@
         }
         .instagram-link:hover {
             background-color: var(--light-petal) !important;
-            border-color: var(--primary-rose) !important; /* Uses new vibrant rose color */
+            border-color: var(--primary-rose) !important; 
             color: var(--dark-text) !important;
         }
 
-        /* Loader uses a dense, beautiful opaque version of the main gradient */
         #loader-wrapper {
             background: linear-gradient(135deg, rgba(253, 228, 201, 0.95) 0%, rgba(224, 187, 228, 0.95) 35%, rgba(159, 226, 191, 0.95) 70%, rgba(144, 211, 255, 0.95) 100%);
         }
 
-        /* General UI styling remains the same */
         #alert-message-box {
             position: fixed;
             top: 20px;
@@ -164,11 +165,9 @@
         
         .instagram-icon { color: url(#instagramGradient); }
 
-        /* TikTok Icon Style */
         .tiktok-icon {
             position: relative;
             fill: var(--tiktok-dark); 
-            /* Apply the two-tone shadow effect */
             filter: 
                 drop-shadow(3px 0px 0 var(--tiktok-magenta)) 
                 drop-shadow(-3px -3px 0 var(--tiktok-cyan));
@@ -179,15 +178,12 @@
             filter: none !important;
         }
         
-        /* SVG definitions for gradient for Instagram */
         #instagramGradient stop:first-child { stop-color: #feda75; }
         #instagramGradient stop:nth-child(2) { stop-color: #fa7e1e; }
         #instagramGradient stop:nth-child(3) { stop-color: #d62976; }
         #instagramGradient stop:nth-child(4) { stop-color: #962fbf; }
         #instagramGradient stop:last-child { stop-color: #4f5bd5; }
 
-        
-        /* Video Container Styling (Kept the internal video view for reference) */
         .video-mock {
             background-color: #2c3e50;
             color: white;
@@ -219,8 +215,27 @@
             height: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-left: 15px solid #E86380; /* Rose color for play button */
+            border-left: 15px solid #E86380; 
             margin-left: 3px;
+        }
+        
+        /* New style for the primary action button on the introduction page */
+        .primary-action-btn {
+            background-color: var(--primary-rose);
+            color: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 10px rgba(232, 99, 128, 0.4);
+        }
+        .primary-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(232, 99, 128, 0.6);
+            background-color: #c94c69; /* Slightly darker on hover */
+        }
+
+        /* Style for the green star icon - Used ONLY in Middle Page */
+        .green-star-icon {
+            color: var(--secondary-mint); 
+            filter: drop-shadow(0 0 3px rgba(159, 226, 191, 0.6)); 
         }
         
     </style>
@@ -243,7 +258,7 @@
     <!-- Custom Alert Message Box -->
     <div id="alert-message-box" class="hidden"></div>
 
-    <!-- Vibrant Loading Screen with Gradient -->
+    <!-- Vibrant Loading Screen (REVERTED: Standard Elegant Serif Font) -->
     <div id="loader-wrapper" class="fixed inset-0 flex flex-col items-center justify-center h-screen w-screen z-50 transition-opacity duration-700 opacity-100">
         <div class="text-center flex flex-col items-center space-y-8">
             <h1 class="elegant-text text-4xl md:text-6xl italic font-bold tracking-wider animate-slow-pulse" style="color: var(--dark-text);">
@@ -256,12 +271,68 @@
         </div>
     </div>
 
-    <!-- Main Content View -->
+    <!-- 1. NEW INTRODUCTION CONTENT VIEW (CUSTOMIZED) -->
+    <div id="intro-content" class="full-view hidden opacity-0 flex items-center justify-center">
+        <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100">
+            
+            <!-- Logo in Intro Page: Changed to Green Star as requested -->
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full border-4 border-white shadow-lg flex items-center justify-center" style="background-color: var(--light-petal); border-color: var(--primary-rose);">
+                <svg class="w-10 h-10 green-star-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+
+            <!-- Title in Intro Page: Readable Cursive Font -->
+            <h2 class="intro-cursive text-4xl font-bold mb-4 text-center" style="color: var(--primary-rose);">
+                The Art of the Everlasting Bloom
+            </h2>
+            
+            <hr class="border-t-2 mb-6" style="border-color: var(--secondary-mint);">
+
+            <!-- Introduction Text (Professional & Darker Visibility) -->
+            <div class="space-y-4 text-left mb-6 text-base font-medium" style="color: #2D3748;">
+                <p>
+                    At Bellora, we craft <strong>meticulously handmade, high-quality artificial flowers</strong> that bottle the transient beauty of nature into <strong>timeless keepsakes</strong>. We offer blooms that guarantee <strong>enduring joy</strong>, maintaining their vibrancy and elegance indefinitely.
+                </p>
+                <p class="font-semibold" style="color: var(--primary-rose);">
+                    Choose Bellora for a perfect, lasting expression that transcends the moment.
+                </p>
+            </div>
+
+            <!-- Vision and Mission Section (Green Star Icon) -->
+            <div class="space-y-4 mb-8 p-4 rounded-xl border" style="border-color: var(--light-petal); background-color: rgba(253, 228, 201, 0.2);">
+                
+                <!-- Our Mission: Green Star Icon -->
+                <div class="flex items-start" style="color: #2D3748;">
+                    <svg class="w-6 h-6 mr-3 mt-1 flex-shrink-0 green-star-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <div>
+                        <h3 class="font-bold elegant-text text-lg" style="color: #1A202C;">Our Mission</h3>
+                        <p class="text-sm text-gray-800 font-medium">To craft unique, high-quality floral arrangements that offer sustainable elegance and everlasting sentiment to homes and loved ones.</p>
+                    </div>
+                </div>
+
+                <!-- Our Vision -->
+                <div class="flex items-start" style="color: #2D3748;">
+                    <svg class="w-6 h-6 mr-3 mt-1 flex-shrink-0" fill="currentColor" style="color: var(--secondary-mint);" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                    <div>
+                        <h3 class="font-bold elegant-text text-lg" style="color: #1A202C;">Our Vision</h3>
+                        <p class="text-sm text-gray-800 font-medium">To be the preferred artisan for gifts and florals, recognized for quality, personal touch, and the durability of our designs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Button (Updated Text) -->
+            <button onclick="window.showView('main-content')" class="primary-action-btn w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md">
+                Discover Our Socials and Start Shopping
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- 2. MAIN CONTENT VIEW (REVERTED: "B" Logo and Standard Font) -->
     <div id="main-content" class="full-view hidden opacity-0 flex items-center justify-center">
-        <!-- Optimized card padding: p-6 (24px) for mobile, md:p-8 (32px) for desktop -->
         <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100 text-center">
             
-            <!-- Logo/Avatar -->
+            <!-- Logo/Avatar: REVERTED to "B" -->
             <div class="mb-8">
                 <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-white shadow-lg flex items-center justify-center elegant-text text-3xl font-bold" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">
                     <span style="color: var(--dark-text);">B</span>
@@ -272,7 +343,7 @@
                 </p>
             </div>
             
-            <!-- Social Links -->
+            <!-- Social Links (Standard) -->
             <div class="space-y-4">
                 
                 <a href="https://wa.me/971528845944" target="_blank" class="social-link-btn whatsapp-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md" style="border-color: #25D366; color: #25D366;">
@@ -289,9 +360,7 @@
                     Follow us on Facebook
                 </a>
                 
-                <!-- Updated: TikTok button text changed to 'Explore us on TikTok' -->
                 <a href="https://www.tiktok.com/@bellora_gifts_florals" target="_blank" class="social-link-btn tiktok-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md" style="border-color: var(--tiktok-dark); color: var(--tiktok-dark);">
-                    <!-- TikTok Icon SVG -->
                     <svg class="social-icon tiktok-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.333 0C10.01 0 1.833 3.333 1.833 12.333V24h5.5V13.784c0-2.842 2.155-3.333 4.167-3.333c1.833 0 3.167 1.333 3.167 3.333V24h5.5V12.333C21.167 3.333 12.99 0 10.667 0h1.666z"/>
                     </svg>
@@ -299,80 +368,56 @@
                 </a>
 
                 <a href="https://www.instagram.com/bellora_gifts_and_florals?igsh=NDdyMmIzd3o2Yjhw&utm_source=qr" target="_blank" class="social-link-btn instagram-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md mt-6" style="border-color: var(--primary-rose); color: var(--dark-text);">
-                    <svg class="social-icon instagram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#instagramGradient)"/>
                         <path d="M16 3h.01" fill="white"/>
                         <circle cx="12" cy="12" r="4" fill="white"/>
                     </svg> Follow us on Instagram
                 </a>
 
-                <!-- Removed: The text '(or view internal video preview)' has been removed -->
                 <button onclick="window.showView('video-content'); return false;" class="text-sm text-gray-400 hover:text-gray-600 transition duration-200 mt-4 mx-auto block"></button>
             </div>
         </div>
     </div>
 
-    <!-- Instagram Content View (Placeholder) -->
+    <!-- 3. INSTAGRAM CONTENT VIEW (Remains unchanged) -->
     <div id="ig-content" class="full-view hidden opacity-0">
-        <!-- Optimized card padding: p-6 (24px) for mobile, md:p-10 (40px) for desktop -->
         <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
-            
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--primary-rose);">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Main Hub
             </button>
-
             <h1 class="text-3xl font-extrabold elegant-text mb-6" style="color: var(--dark-text);">
                 Our Latest Blooms (Instagram)
             </h1>
             <p class="text-gray-500 mb-6 text-sm">A preview of our featured arrangements and seasonal collections.</p>
-            
             <div class="grid grid-cols-2 gap-4">
-                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">
-                    Rose Bliss
-                </div>
-                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">
-                    Spring Mix
-                </div>
-                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">
-                    Vase Life
-                </div>
-                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">
-                    Custom Order
-                </div>
+                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">Rose Bliss</div>
+                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">Spring Mix</div>
+                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">Vase Life</div>
+                <div class="aspect-square rounded-lg shadow-lg flex items-center justify-center font-bold text-sm border-4" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">Custom Order</div>
             </div>
         </div>
     </div>
 
-    <!-- Video Content View (Simulated Video Gallery) -->
+    <!-- 4. VIDEO CONTENT VIEW (Remains unchanged) -->
     <div id="video-content" class="full-view hidden opacity-0">
-        <!-- Optimized card padding: p-6 (24px) for mobile, md:p-10 (40px) for desktop -->
         <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
-            
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--dark-text);">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Main Hub
             </button>
-
             <h1 class="text-3xl font-extrabold elegant-text mb-6" style="color: var(--dark-text);">
                 Featured Videos
             </h1>
             <p class="text-gray-500 mb-6 text-sm">See our arrangements in action, live tours, and gift wrapping tutorials.</p>
-            
             <div class="space-y-6">
-                <!-- Video Mock 1 -->
                 <div class="aspect-video video-mock">
-                    <div class="play-button" onclick="window.alertMessage('Playing: Wedding Bouquet Showcase', 'info')">
-                        <div class="play-triangle"></div>
-                    </div>
+                    <div class="play-button" onclick="window.alertMessage('Playing: Wedding Bouquet Showcase', 'info')"><div class="play-triangle"></div></div>
                     <span class="p-4">Video 1: Wedding Bouquet Showcase</span>
                 </div>
-                
-                <!-- Video Mock 2 -->
                 <div class="aspect-video video-mock">
-                    <div class="play-button" onclick="window.alertMessage('Playing: New Seasonal Arrangement', 'info')">
-                        <div class="play-triangle"></div>
-                    </div>
+                    <div class="play-button" onclick="window.alertMessage('Playing: New Seasonal Arrangement', 'info')"><div class="play-triangle"></div></div>
                     <span class="p-4">Video 2: New Seasonal Arrangement</span>
                 </div>
             </div>
@@ -383,27 +428,25 @@
     <script>
         const views = {
             'loader-wrapper': document.getElementById('loader-wrapper'),
+            'intro-content': document.getElementById('intro-content'), 
             'main-content': document.getElementById('main-content'),
             'ig-content': document.getElementById('ig-content'),
-            'video-content': document.getElementById('video-content'), // Added new view
+            'video-content': document.getElementById('video-content'),
         };
         
         const alertBox = document.getElementById('alert-message-box');
 
-        // --- Custom Alert System (Unused but kept for utility) ---
+        // --- Custom Alert System ---
         window.alertMessage = function(message, type = 'info', duration = 3000) {
             const typeStyles = {
                 'success': 'bg-green-500 text-white',
                 'error': 'bg-red-500 text-white',
                 'info': 'bg-blue-500 text-white',
             };
-
             alertBox.className = typeStyles[type] + ' ' + 'rounded-lg';
             alertBox.innerHTML = `<strong>${type.toUpperCase()}:</strong> ${message}`;
             alertBox.classList.remove('hidden');
-            
             setTimeout(() => alertBox.classList.add('show'), 10);
-
             setTimeout(() => {
                 alertBox.classList.remove('show');
                 setTimeout(() => alertBox.classList.add('hidden'), 300);
@@ -430,56 +473,35 @@
             }
         }
         
+        // FLOW: Loader -> Intro Page
         function hideLoader() {
             views['loader-wrapper'].style.opacity = '0';
             setTimeout(() => {
                 views['loader-wrapper'].style.visibility = 'hidden';
                 views['loader-wrapper'].classList.add('hidden');
-                window.showView('main-content');
+                window.showView('intro-content'); 
             }, 700);
         }
         
         // --- Ripple Click Handler ---
         function handleStarClick(e) {
-            // Prevent ripple if clicking on the central content box
-            if (e.target.closest('.shadow-2xl')) {
-                return;
-            }
+            if (e.target.closest('.shadow-2xl')) return;
 
-            // Only show the ripple if the main content or IG content is visible (not the loader)
-            if (views['main-content'].classList.contains('hidden') && views['ig-content'].classList.contains('hidden') && views['video-content'].classList.contains('hidden')) {
-                return;
-            }
+            const isContentViewVisible = ['main-content', 'ig-content', 'video-content', 'intro-content'].some(id => !views[id].classList.contains('hidden'));
+            if (!isContentViewVisible) return;
 
             const ripple = document.createElement('div');
             ripple.classList.add('ripple-effect');
-            
-            // Set position based on click coordinates
             ripple.style.left = `${e.clientX}px`;
             ripple.style.top = `${e.clientY}px`;
-
             document.body.appendChild(ripple);
-            
-            // Remove the ripple element after the animation finishes (1200ms CSS animation)
-            ripple.addEventListener('animationend', () => {
-                ripple.remove();
-            });
-
-            // Fallback removal just in case the animationend event is missed
-            // 100ms buffer after 1200ms animation
-            setTimeout(() => {
-                if(ripple.parentNode) {
-                    ripple.remove();
-                }
-            }, 1300);
+            ripple.addEventListener('animationend', () => { ripple.remove(); });
+            setTimeout(() => { if(ripple.parentNode) ripple.remove(); }, 1300);
         }
 
-        // --- Initial Flow Trigger ---
         window.addEventListener('DOMContentLoaded', () => {
             const minLoadTime = 1500;
             setTimeout(hideLoader, minLoadTime);
-            
-            // Attach the ripple click listener to the entire document body
             document.body.addEventListener('click', handleStarClick);
         });
     </script>
