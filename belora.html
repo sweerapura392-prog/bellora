@@ -258,7 +258,7 @@
     <!-- Custom Alert Message Box -->
     <div id="alert-message-box" class="hidden"></div>
 
-    <!-- Vibrant Loading Screen (REVERTED: Standard Elegant Serif Font) -->
+    <!-- Vibrant Loading Screen (STANDARD ELEGANT SERIF FONT) -->
     <div id="loader-wrapper" class="fixed inset-0 flex flex-col items-center justify-center h-screen w-screen z-50 transition-opacity duration-700 opacity-100">
         <div class="text-center flex flex-col items-center space-y-8">
             <h1 class="elegant-text text-4xl md:text-6xl italic font-bold tracking-wider animate-slow-pulse" style="color: var(--dark-text);">
@@ -271,11 +271,11 @@
         </div>
     </div>
 
-    <!-- 1. NEW INTRODUCTION CONTENT VIEW (CUSTOMIZED) -->
+    <!-- 1. INTRODUCTION CONTENT VIEW (CUSTOMIZED) -->
     <div id="intro-content" class="full-view hidden opacity-0 flex items-center justify-center">
         <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100">
             
-            <!-- Logo in Intro Page: Changed to Green Star as requested -->
+            <!-- Logo in Intro Page: Green Star Icon -->
             <div class="w-16 h-16 mx-auto mb-4 rounded-full border-4 border-white shadow-lg flex items-center justify-center" style="background-color: var(--light-petal); border-color: var(--primary-rose);">
                 <svg class="w-10 h-10 green-star-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             </div>
@@ -328,15 +328,19 @@
     </div>
 
 
-    <!-- 2. MAIN CONTENT VIEW (REVERTED: "B" Logo and Standard Font) -->
+    <!-- 2. MAIN CONTENT VIEW (STANDARD FONT AND LOGO) -->
     <div id="main-content" class="full-view hidden opacity-0 flex items-center justify-center">
         <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100 text-center">
             
-            <!-- Logo/Avatar: REVERTED to "B" -->
+            <!-- Logo/Avatar: Floral Image -->
             <div class="mb-8">
-                <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-white shadow-lg flex items-center justify-center elegant-text text-3xl font-bold" style="background-color: var(--light-petal); color: var(--dark-text); border-color: var(--primary-rose);">
-                    <span style="color: var(--dark-text);">B</span>
-                </div>
+                <!-- LOGO REPLACEMENT: Using the floral image provided by the user -->
+                <img src="WhatsApp Image 2025-12-11 at 16.11.41_0bfa9c49.jpg" 
+                     alt="Bellora Gifts & Florals Floral Logo" 
+                     class="w-48 h-48 mx-auto mb-4 object-contain rounded-2xl shadow-xl"
+                     style="border: 4px solid var(--light-petal);" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/192x192/9FE2BF/3C4048?text=Bellora+Logo';" 
+                />
                 <h2 class="elegant-text text-3xl font-bold" style="color: var(--dark-text);">Bellora Gifts & Florals</h2>
                 <p class="text-gray-500 text-sm italic">
                     Connect with us on all platforms!
@@ -360,7 +364,8 @@
                     Follow us on Facebook
                 </a>
                 
-                <a href="https://www.tiktok.com/@bellora_gifts_florals" target="_blank" class="social-link-btn tiktok-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md" style="border-color: var(--tiktok-dark); color: var(--tiktok-dark);">
+                <!-- UPDATED TIKTOK URL -->
+                <a href="https://www.tiktok.com/@belloragiftsandflorals?_r=1&_t=ZS-928GGKcGYwK" target="_blank" class="social-link-btn tiktok-link w-full flex items-center justify-center py-3 px-6 rounded-xl text-lg font-bold shadow-md" style="border-color: var(--tiktok-dark); color: var(--tiktok-dark);">
                     <svg class="social-icon tiktok-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.333 0C10.01 0 1.833 3.333 1.833 12.333V24h5.5V13.784c0-2.842 2.155-3.333 4.167-3.333c1.833 0 3.167 1.333 3.167 3.333V24h5.5V12.333C21.167 3.333 12.99 0 10.667 0h1.666z"/>
                     </svg>
@@ -375,18 +380,29 @@
                     </svg> Follow us on Instagram
                 </a>
 
-                <button onclick="window.showView('video-content'); return false;" class="text-sm text-gray-400 hover:text-gray-600 transition duration-200 mt-4 mx-auto block"></button>
+                <button onclick="window.showView('video-content'); return false;" class="text-sm text-gray-400 hover:text-gray-600 transition duration-200 mt-4 mx-auto block">Watch our Featured Videos</button>
             </div>
         </div>
     </div>
 
-    <!-- 3. INSTAGRAM CONTENT VIEW (Remains unchanged) -->
+    <!-- 3. INSTAGRAM CONTENT VIEW -->
     <div id="ig-content" class="full-view hidden opacity-0">
         <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--primary-rose);">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Main Hub
             </button>
+            
+            <!-- Logo in Instagram Content View -->
+            <div class="w-20 h-20 mx-auto mb-6">
+                <img src="WhatsApp Image 2025-12-11 at 16.11.41_0bfa9c49.jpg" 
+                     alt="Bellora Gifts & Florals Logo" 
+                     class="w-full h-full object-cover rounded-full shadow-lg"
+                     style="border: 3px solid var(--primary-rose);" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/80x80/E86380/FFFFFF?text=Logo';" 
+                />
+            </div>
+            
             <h1 class="text-3xl font-extrabold elegant-text mb-6" style="color: var(--dark-text);">
                 Our Latest Blooms (Instagram)
             </h1>
@@ -400,13 +416,24 @@
         </div>
     </div>
 
-    <!-- 4. VIDEO CONTENT VIEW (Remains unchanged) -->
+    <!-- 4. VIDEO CONTENT VIEW -->
     <div id="video-content" class="full-view hidden opacity-0">
         <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--dark-text);">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Main Hub
             </button>
+            
+            <!-- Logo in Video Content View -->
+            <div class="w-20 h-20 mx-auto mb-6">
+                <img src="WhatsApp Image 2025-12-11 at 16.11.41_0bfa9c49.jpg" 
+                     alt="Bellora Gifts & Florals Logo" 
+                     class="w-full h-full object-cover rounded-full shadow-lg"
+                     style="border: 3px solid var(--primary-rose);" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/80x80/E86380/FFFFFF?text=Logo';" 
+                />
+            </div>
+            
             <h1 class="text-3xl font-extrabold elegant-text mb-6" style="color: var(--dark-text);">
                 Featured Videos
             </h1>
@@ -485,8 +512,10 @@
         
         // --- Ripple Click Handler ---
         function handleStarClick(e) {
+            // Do not generate ripple if click is inside the main content card
             if (e.target.closest('.shadow-2xl')) return;
 
+            // Only generate ripple if one of the content views is visible
             const isContentViewVisible = ['main-content', 'ig-content', 'video-content', 'intro-content'].some(id => !views[id].classList.contains('hidden'));
             if (!isContentViewVisible) return;
 
@@ -501,7 +530,9 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             const minLoadTime = 1500;
-            setTimeout(hideLoader, minLoadTime);
+            // Introduce a slight delay to ensure the beautiful gradient loader is seen.
+            setTimeout(hideLoader, minLoadTime); 
+            // Add global ripple effect on background clicks
             document.body.addEventListener('click', handleStarClick);
         });
     </script>
