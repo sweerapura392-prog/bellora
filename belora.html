@@ -7,6 +7,8 @@
     
     <!-- Dancing Script (Cursive) for the Intro Page Only -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- NEW ELEGANT FONT for Main Hub Title -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* --- Custom Vibrant Floral Color Scheme Variables --- */
@@ -43,6 +45,13 @@
             letter-spacing: 0.1em;
             text-shadow: 1px 1px 2px rgba(60, 64, 72, 0.1);
             color: var(--dark-text);
+        }
+        
+        /* NEW STYLING: Cormorant Garamond for the Main Heading */
+        .elegant-display {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.05em; /* Tighter letter spacing for this font */
+            text-shadow: 0 0 5px rgba(232, 99, 128, 0.5); /* Soft rose shadow */
         }
 
         /* Specific Cursive Font ONLY for the Intro Page */
@@ -85,20 +94,21 @@
             z-index: 5;
         }
         
-        /* Button Style */
+        /* Button Style - UPDATED FOR 'CUT OUT' EFFECT */
         .social-link-btn {
             position: relative; 
             overflow: hidden; 
             background-color: white;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
             color: var(--dark-text);
-            border: 2px solid var(--secondary-mint); 
+            border: 3px solid var(--secondary-mint); /* Thicker border */
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly deeper initial shadow */
         }
 
         .social-link-btn:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Stronger hover shadow */
+            transform: translateY(-2px); /* Lifts the button for 'cut-out' feel */
             text-shadow: none;
         }
         
@@ -273,7 +283,7 @@
 
     <!-- 1. INTRODUCTION CONTENT VIEW (CUSTOMIZED) -->
     <div id="intro-content" class="full-view hidden opacity-0 flex items-center justify-center">
-        <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100">
+        <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border-2 border-pink-100">
             
             <!-- Logo in Intro Page: Green Star Icon -->
             <div class="w-16 h-16 mx-auto mb-4 rounded-full border-4 border-white shadow-lg flex items-center justify-center" style="background-color: var(--light-petal); border-color: var(--primary-rose);">
@@ -298,7 +308,7 @@
             </div>
 
             <!-- Vision and Mission Section (Green Star Icon) -->
-            <div class="space-y-4 mb-8 p-4 rounded-xl border" style="border-color: var(--light-petal); background-color: rgba(253, 228, 201, 0.2);">
+            <div class="space-y-4 mb-8 p-4 rounded-xl border-2" style="border-color: var(--secondary-mint); background-color: rgba(253, 228, 201, 0.2);">
                 
                 <!-- Our Mission: Green Star Icon -->
                 <div class="flex items-start" style="color: #2D3748;">
@@ -330,18 +340,13 @@
 
     <!-- 2. MAIN CONTENT VIEW (STANDARD FONT AND LOGO) -->
     <div id="main-content" class="full-view hidden opacity-0 flex items-center justify-center">
-        <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border border-pink-100 text-center">
+        <!-- Increased border-2 on the card -->
+        <div class="max-w-md w-full p-6 md:p-8 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-sm border-2 border-pink-100 text-center">
             
-            <!-- Logo/Avatar: Floral Image -->
-            <div class="mb-8">
-                <!-- LOGO REPLACEMENT: Using the floral image provided by the user -->
-                <img src="WhatsApp Image 2025-12-11 at 16.11.41_0bfa9c49.jpg" 
-                     alt="Bellora Gifts & Florals Floral Logo" 
-                     class="w-48 h-48 mx-auto mb-4 object-contain rounded-2xl shadow-xl"
-                     style="border: 4px solid var(--light-petal);" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/192x192/9FE2BF/3C4048?text=Bellora+Logo';" 
-                />
-                <h2 class="elegant-text text-3xl font-bold" style="color: var(--dark-text);">Bellora Gifts & Florals</h2>
+            <!-- Header - Logo/Avatar removed as requested, keeping only text -->
+            <div class="mb-8 mt-4"> 
+                <!-- Changed font to elegant-display and increased size -->
+                <h2 class="elegant-text elegant-display text-4xl font-bold" style="color: var(--dark-text);">Bellora Gifts & Florals</h2>
                 <p class="text-gray-500 text-sm italic">
                     Connect with us on all platforms!
                 </p>
@@ -387,19 +392,19 @@
 
     <!-- 3. INSTAGRAM CONTENT VIEW -->
     <div id="ig-content" class="full-view hidden opacity-0">
-        <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
+        <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border-2 border-pink-100 mt-8">
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--primary-rose);">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Main Hub
             </button>
             
-            <!-- Logo in Instagram Content View -->
+            <!-- Logo in Instagram Content View (Updated to use reliable placeholder URL for stability) -->
             <div class="w-20 h-20 mx-auto mb-6">
-                <img src="WhatsApp Image 2025-12-11 at 16.11.41_0bfa9c49.jpg" 
-                     alt="Bellora Gifts & Florals Logo" 
-                     class="w-full h-full object-cover rounded-full shadow-lg"
-                     style="border: 3px solid var(--primary-rose);" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/80x80/E86380/FFFFFF?text=Logo';" 
+                <img src="https://placehold.co/80x80/E86380/FFFFFF?text=Logo" 
+                    alt="Bellora Gifts & Florals Logo" 
+                    class="w-full h-full object-cover rounded-full shadow-lg"
+                    style="border: 3px solid var(--primary-rose);" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/80x80/E86380/FFFFFF?text=Logo';" 
                 />
             </div>
             
@@ -418,19 +423,19 @@
 
     <!-- 4. VIDEO CONTENT VIEW -->
     <div id="video-content" class="full-view hidden opacity-0">
-        <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border border-pink-100 mt-8">
+        <div class="max-w-2xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl bg-white/90 border-2 border-pink-100 mt-8">
             <button onclick="window.showView('main-content')" class="font-semibold mb-6 flex items-center transition duration-200" style="color: var(--dark-text);">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Main Hub
             </button>
             
-            <!-- Logo in Video Content View -->
+            <!-- Logo in Video Content View (Updated to use reliable placeholder URL for stability) -->
             <div class="w-20 h-20 mx-auto mb-6">
-                <img src="WhatsApp Image 2025-12-11 at 16.11.41_0bfa9c49.jpg" 
-                     alt="Bellora Gifts & Florals Logo" 
-                     class="w-full h-full object-cover rounded-full shadow-lg"
-                     style="border: 3px solid var(--primary-rose);" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/80x80/E86380/FFFFFF?text=Logo';" 
+                <img src="https://placehold.co/80x80/E86380/FFFFFF?text=Logo" 
+                    alt="Bellora Gifts & Florals Logo" 
+                    class="w-full h-full object-cover rounded-full shadow-lg"
+                    style="border: 3px solid var(--primary-rose);" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/80x80/E86380/FFFFFF?text=Logo';" 
                 />
             </div>
             
@@ -463,7 +468,7 @@
         
         const alertBox = document.getElementById('alert-message-box');
 
-        // --- Custom Alert System ---
+        // --- Custom Alert System (no window.alert() or window.confirm()) ---
         window.alertMessage = function(message, type = 'info', duration = 3000) {
             const typeStyles = {
                 'success': 'bg-green-500 text-white',
@@ -494,7 +499,7 @@
             if (targetView && targetView.id !== 'loader-wrapper') {
                 setTimeout(() => {
                     targetView.classList.remove('hidden');
-                    void targetView.offsetWidth;
+                    void targetView.offsetWidth; // Trigger reflow to ensure smooth transition start
                     targetView.style.opacity = '1';
                 }, 350);
             }
